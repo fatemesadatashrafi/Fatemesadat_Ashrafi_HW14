@@ -1,6 +1,7 @@
 using HW14.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace HW14.Controllers
 {
@@ -21,6 +22,17 @@ namespace HW14.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+        public IActionResult Subscription()
+        {
+            return View();
+        }
+        public IActionResult Submit(UserInformationViewModel u, bool acceptingRules)
+        {
+
+            if (ModelState.IsValid)
+            { }
+            return Json(new { acceptingRules = acceptingRules});
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

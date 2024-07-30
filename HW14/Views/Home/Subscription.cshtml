@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Subscription";
+}
+@model HW14.Models.UserInformationViewModel
+<div id="sign-in-form" class="p-5 bg-light border border-dark mx-auto my-4">
+    <form asp-controller="Home" asp-action="Submit" method="post">
+        <div class="w-75 mx-auto my-1 form-floating">
+            <input type="text" class="form-control pt-3 shadow-none border" name="FirstName" asp-for="FirstName">
+            <label for="floatingInput">نام</label>
+            <small id="fnameError" class="text-danger"></small>
+        </div>
+        <div class="w-75 mx-auto my-1 form-floating">
+            <input id="lname" type="text" class="form-control pt-3 shadow-none border" name="LastName" asp-for="LastName">
+            <label for="floatingInput">نام خانوادگی</label>
+            <small id="lnameError" class="text-danger"></small>
+        </div>
+        <div class="w-75 mx-auto my-1 form-floating">
+            <input id="phoneNumber" type="text" class="form-control pt-3  shadow-none border" name="PhoneNumber" asp-for="PhoneNumber">
+            <label for="floatingInput">شماره تلفن</label>
+            <small id="phoneNumberError" class="text-danger"></small>
+        </div>
+        <div class="w-75 mx-auto my-1 form-floating">
+            <input id="birthDate" type="date" class="form-control pt-3 shadow-none border" name="BirthDate" asp-for="BirthDate">
+            <label for="floatingInput">تاریخ تولد</label>
+            <small id="birthDateError" class="text-danger"></small>
+        </div>
+        <div class="w-75 mx-auto my-1 form-floating">
+            <input id="bootcampCode" type="text" class="form-control pt-3 shadow-none border" name="BootcampCode" asp-for="BootcampCode">
+            <label for="floatingInput">کد دوره</label>
+            <small id="bootcampCodeError" class="text-danger"></small>
+        </div>
+        <div class="w-75 mx-auto my-1">
+            <select class="w-100 form-control pt-3 shadow-none border gender" name="Gender" asp-for="Gender">
+                <option value="" selected disabled>جنسیت</option>
+                <option value="1">مرد</option>
+                <option value="2">زن</option>
+            </select>
+        </div>
+        <div class="w-75 mx-auto my-1">
+            <input type="checkbox" name="acceptingRules" value="true">
+        <a class="nav-link text-dark d-inline-block" asp-area="" asp-controller="Home" asp-action="Subscription">قوانین سایت</a>
+        <span>را با دقت مطالعه کرده ام.</span>
+        </div>
+        <div class="w-75 mx-auto my-1">
+            <button type="submit" class="w-100 btn btn-primary">Sign up</button>
+        </div>
+    </form>
+</div>
+

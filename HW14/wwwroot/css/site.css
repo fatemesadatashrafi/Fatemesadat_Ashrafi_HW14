@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  direction:rtl;
 }
 
 @media (min-width: 768px) {
@@ -19,4 +20,13 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+/**************************/
+
+#sign-in-form{
+    width:570px;
+}
+/* Hidden placeholder */
+select option[disabled]:first-child {
+    display: none;
 }
