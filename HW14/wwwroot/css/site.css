@@ -19,7 +19,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: Vazir;
+    margin-bottom: 60px;
 }
 /**************************/
 
@@ -29,4 +30,7 @@ body {
 /* Hidden placeholder */
 select option[disabled]:first-child {
     display: none;
+}
+p{
+    text-align:justify;
 }

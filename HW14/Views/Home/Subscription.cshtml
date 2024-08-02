@@ -7,27 +7,43 @@
         <div class="w-75 mx-auto my-1 form-floating">
             <input type="text" class="form-control pt-3 shadow-none border" name="FirstName" asp-for="FirstName">
             <label for="floatingInput">نام</label>
-            <small id="fnameError" class="text-danger"></small>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+            @if (ViewBag.FirstNameType == "false")
+            {
+                <span asp-validation-for="FirstName" class="d-block text-danger">نام فقط  شامل حروف می باشد.</span>
+            }
         </div>
         <div class="w-75 mx-auto my-1 form-floating">
             <input id="lname" type="text" class="form-control pt-3 shadow-none border" name="LastName" asp-for="LastName">
             <label for="floatingInput">نام خانوادگی</label>
-            <small id="lnameError" class="text-danger"></small>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+            @if (ViewBag.LastNameType == "false")
+            {
+                <span asp-validation-for="LastName" class="d-block text-danger">نام خانوادگی فقط  شامل حروف می باشد.</span>
+            }
         </div>
         <div class="w-75 mx-auto my-1 form-floating">
             <input id="phoneNumber" type="text" class="form-control pt-3  shadow-none border" name="PhoneNumber" asp-for="PhoneNumber">
             <label for="floatingInput">شماره تلفن</label>
-            <small id="phoneNumberError" class="text-danger"></small>
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
         <div class="w-75 mx-auto my-1 form-floating">
             <input id="birthDate" type="date" class="form-control pt-3 shadow-none border" name="BirthDate" asp-for="BirthDate">
             <label for="floatingInput">تاریخ تولد</label>
-            <small id="birthDateError" class="text-danger"></small>
+            <span asp-validation-for="BirthDate" class="text-danger"></span>
+            @if (ViewBag.Age == "false")
+            {
+                <span asp-validation-for="BirthDate" class="d-block text-danger">محدودیت سن</span>
+            }
         </div>
         <div class="w-75 mx-auto my-1 form-floating">
             <input id="bootcampCode" type="text" class="form-control pt-3 shadow-none border" name="BootcampCode" asp-for="BootcampCode">
             <label for="floatingInput">کد دوره</label>
-            <small id="bootcampCodeError" class="text-danger"></small>
+            <span asp-validation-for="BootcampCode" class="text-danger"></span>
+            @if (ViewBag.BootcampCode == "false")
+            {
+                <span asp-validation-for="BootcampCode" class="d-block text-danger">کد دوره صحیح نمی باشد</span>
+            }
         </div>
         <div class="w-75 mx-auto my-1">
             <select class="w-100 form-control pt-3 shadow-none border gender" name="Gender" asp-for="Gender">
@@ -35,11 +51,16 @@
                 <option value="1">مرد</option>
                 <option value="2">زن</option>
             </select>
+            <span asp-validation-for="Gender" class="text-danger"></span>
         </div>
         <div class="w-75 mx-auto my-1">
-            <input type="checkbox" name="acceptingRules" value="true">
-        <a class="nav-link text-dark d-inline-block" asp-area="" asp-controller="Home" asp-action="Subscription">قوانین سایت</a>
+            <input type="checkbox" name="AcceptingRules" asp-for="AcceptingRules" value="true">
+        <a class="nav-link text-dark d-inline-block" asp-area="" asp-controller="Home" asp-action="Rules">قوانین سایت</a>
         <span>را با دقت مطالعه کرده ام.</span>
+            @if (ViewBag.AcceptingRules == "false")
+            {
+                <span asp-validation-for="AcceptingRules" class="d-block text-danger">قوانین سایت رونمی پذیری؟</span>
+            }
         </div>
         <div class="w-75 mx-auto my-1">
             <button type="submit" class="w-100 btn btn-primary">Sign up</button>

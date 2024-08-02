@@ -1,0 +1,1 @@
+"{\r\n  \"FirstName\": \"fateme\",\r\n  \"LastName\": \"ashrafi\",\r\n  \"PhoneNumber\": \"09171011902\",\r\n  \"BirthDate\": \"2000-08-29T00:00:00\",\r\n  \"BootcampCode\": 234,\r\n  \"Gender\": 1,\r\n  \"AcceptingRules\": true\r\n}"
